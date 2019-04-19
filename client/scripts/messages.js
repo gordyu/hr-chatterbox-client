@@ -1,7 +1,9 @@
 var Messages = {
-  username: '';
-  text: '';
-  roomname: '';
+  storage: [],
+  
+  /*new: function(message) {
+    Messages.newMessages.push(message);
+  }*/
 };
 
 /* Format of messages:
@@ -12,4 +14,8 @@ var message = {
   text: 'trololo',
   roomname: '4chan'
 };
+
+Gordon notes:
+var MessageS should contain ALL var message
+Use array to store?
 */
