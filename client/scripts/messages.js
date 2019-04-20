@@ -1,11 +1,8 @@
 var Messages = {
-  storage: [],
-  
-  /*new: function(message) {
-    Messages.newMessages.push(message);
-  }*/
+  //verifyGenuine: function (){} // firewall, .includes(forbidenWords)
 };
 
+// /^<\w{1,}>$/
 /* Format of messages:
 From Learn
 

@@ -10,10 +10,11 @@ var Parse = {
       data: JSON.stringify(message),
       contentType: 'application/json',
       success: successCB,
-      errpr: errorCB || function (error) {
+      error: errorCB || function (error) {
         console.error('chatterbox: Failed to fetch messages', error);
       }
-    });   
+    });
+
   },
 
   readAll: function(successCB, errorCB = null) {

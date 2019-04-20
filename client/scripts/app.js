@@ -14,14 +14,15 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-
   },
 
-  fetch: function(callback = ()=>{}) {
+  fetch: function(callback = ()=>{}, inRoom) {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
-
+      for (let i = 0; i < data.results.length; i++) {
+        MessagesView.renderMessage(data.results[i], inRoom);
+      }
       callback();
     });
   },
