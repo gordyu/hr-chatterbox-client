@@ -3,6 +3,13 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
+    $('.refreshButton').on('click', () => {
+      $('#chats').empty();
+      console.log('downloading new content...');
+      App.fetch(()=>{
+        console.log('download complete.');
+      }, Messages.currentMessage.roomname);
+    });
   },
 
   render: function() {

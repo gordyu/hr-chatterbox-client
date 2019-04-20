@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>chatterbox</title>
+    <title>Rocket Chat</title>
     <link rel="stylesheet" href="client/styles/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/underscore/underscore.js"></script>
     <script>
@@ -23,20 +24,29 @@
   </head>
   <body>
     <div id="main">
-      <h1>chatterbox</h1>
+      <h1><center><i class="fab fa-rocketchat"></i> Rocket Chat</center></h1>
+      <h2><center>The future of chat, today!</center></h2>
+      <h2>Welcome, <span id="currentUsername"></span></h2>
+      <hr>
       <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
       <div id="rooms">
         Room:
-        <select></select> <!--Rooms go here-->
-        <input type="text" name="addRoom" id="addRoom"/>
-        <button>Add Room</button>
+        <select></select>
+        <br>
+        Create a Room: <input type="text" name="addRoom" id="addRoom"/>
+        <button class="button"><i class="fas fa-plus-square"></i> Add Room</button>
       </div>
+      <hr>
       <form action="#" id="send" method="post">
-        <input type="text" name="message" id="message"/>
-        <input type="submit" name="submit" class="submit"/>
+        Type Message: <input type="text" name="message" id="message"/>
+        <br>
+        <center><button class="button submit" type="submit" name="submit"><i class="fas fa-comment-medical"></i> Submit Message</button></center>
       </form>
     </div>
-    <div id="chats"></div> <!--Chats go here-->
+    <div id ="refresh">
+      <button class = "refreshButton"><i class="fab fa-rocketchat"></i> Get That New New</button>
+    </div>
+    <div id="chats"></div>
     <script src="client/env/config.js"></script>
     <script src="client/scripts/parse.js"></script>
     <script src="client/scripts/rooms.js"></script>
@@ -50,6 +60,10 @@
     <script>
       $(() => App.initialize());
       $(document).ready(function(){ 
+
+        document.getElementById('currentUsername').InnerHTML = App.username;
+
+        $('#currentUsername').text(App.username);
 
         $('#rooms select').on('change', () =>{
           let $thisRoom = $('#rooms select option:selected').val()

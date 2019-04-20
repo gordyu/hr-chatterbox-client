@@ -7,6 +7,7 @@ var Friends = {
       console.log(username);
       Friends.toggleStatus(username);
       Friends.list.add(username);
+      $('#chats').empty();
       App.fetch(()=>{});
     });
   }, 

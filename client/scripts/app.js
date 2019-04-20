@@ -5,7 +5,7 @@ var App = {
   username: 'HackMeDaddy',
 
   initialize: function() {
-    App.username = window.location.search.substr(10);
+    //App.username = window.location.search.substr(10); -->reassigns username to "anonymous" for no apparent reason
 
     FormView.initialize();
     RoomsView.initialize();

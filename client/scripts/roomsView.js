@@ -26,6 +26,10 @@ var RoomsView = {
       if (Friends.list.has(message.username)) {
         $message.css('background-color', 'green');
       }
+      if (!Rooms.list.has(message.roomname) && message.roomname) {
+        Rooms.list.add(message.roomname);
+        Rooms.updateRooms();
+      }
       $message.append($content);
       $('#chats')[order]($message);
     }

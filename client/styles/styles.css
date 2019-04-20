@@ -1,5 +1,59 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-    background: #eee;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+  ========================================
+  Custom styles
+  ========================================
+*/
+body {
+    background: rgb(175, 21, 4);
     text-align: center;
     padding: 0 25px;
     font-family: arial, sans-serif;
@@ -66,7 +120,7 @@ form input[type=text] {
 }
 
 .chat .username {
-    font-weight: 800;
+    font-weight: 200;
 }
 
 .chat:hover {
@@ -85,11 +139,46 @@ form input[type=text] {
 
 .message {
     background-color: cornflowerblue;
-    margin: 5px
+    border-radius: 10px;
+    margin-bottom: 8px;
+    border:10px solid #125f6d;
+    min-height: 150px;
 }
 
-.user {
+.user, .user:visited {
     font-size: 30px;
     text-decoration: none;
+    margin-bottom: 5px;
+    line-height: 110%;
+    min-width:100%;
 }
 
+.room{
+    margin-top: 5px;
+    min-width:100%;
+    border-top: 2px solid #125f6d;;
+    border-bottom: 2px solid #125f6d;;
+}
+
+.button, .refreshButton {
+   background-color: orange;
+   border: rgb(175, 21, 4);
+   border-style: solid;
+   font-size: 15px;
+   border-radius: 5px;
+}
+/*Oh wrong Zoom.*/
+/*
+===========================================================
+Typography
+===========================================================
+*/
+
+h1, h2, h3, h5, h5, p {
+    margin-bottom: 8px;
+    margin-left: 2px;
+}
+
+h1 {
+    color: rgb(175, 21, 4);
+}
