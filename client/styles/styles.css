@@ -63,10 +63,11 @@ body {
     width: 500px;
     margin: auto;
     text-align: left;
-    background: white;
+    background: lightgrey;
     padding: 50px 60px;
-    border: solid #ddd;
+    border: solid lightgrey;
     border-width: 0 1px 1px 1px;
+    border-radius: 10px;
 }
 
 #main h1 {
