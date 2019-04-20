@@ -28,7 +28,7 @@
       <div id="rooms">
         Room:
         <select></select> <!--Rooms go here-->
-        <input type="text" name="newRoom" id="newRoom"/>
+        <input type="text" name="addRoom" id="addRoom"/>
         <button>Add Room</button>
       </div>
       <form action="#" id="send" method="post">
@@ -49,6 +49,21 @@
     <script src="client/scripts/app.js"></script>
     <script>
       $(() => App.initialize());
+      $(document).ready(function(){ 
+
+        $('#rooms select').on('change', () =>{
+          let $thisRoom = $('#rooms select option:selected').val()
+          App.fetch(()=>{}, $thisRoom);
+          Messages.currentMessage.roomname = $thisRoom;
+        });
+
+        $('#rooms button').on('click', () => {
+          let newRoom = $('#addRoom').val();
+          Rooms.add(newRoom);
+          $('#addRoom').val('');
+        });
+
+      });
     </script>
   </body>
 </html>

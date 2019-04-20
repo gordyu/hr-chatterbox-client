@@ -9,7 +9,12 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    
+    console.log(Messages);
+    Messages.currentMessage.text = $('#message').val();
+    Parse.create(Messages.currentMessage);
+    MessagesView.renderMessage(Messages.currentMessage, false, 'prepend');
+    Messages.currentMessage.text = '';
+    $('#message').val('');
     console.log('click!');
   },
 

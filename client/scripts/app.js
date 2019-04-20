@@ -2,7 +2,7 @@ var App = {
 
   $spinner: $('.spinner img'),
 
-  username: 'anonymous',
+  username: 'HackMeDaddy',
 
   initialize: function() {
     App.username = window.location.search.substr(10);
@@ -10,6 +10,7 @@ var App = {
     FormView.initialize();
     RoomsView.initialize();
     MessagesView.initialize();
+    Friends.initialize();
 
     // Fetch initial batch of messages
     App.startSpinner();
@@ -20,8 +21,15 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
-      for (let i = 0; i < data.results.length; i++) {
-        MessagesView.renderMessage(data.results[i], inRoom);
+      if (!inRoom) {
+        for (let i = 0; i < data.results.length; i++) {
+          MessagesView.renderMessage(data.results[i], inRoom, 'append');
+        }
+      } else {
+        $('#chats').empty();
+        for (let i = 0; i < data.results.length; i++) {
+          RoomsView.renderRoom(data.results[i], inRoom, 'append');
+        }
       }
       callback();
     });

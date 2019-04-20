@@ -1,5 +1,11 @@
 var Messages = {
-  //verifyGenuine: function (){} // firewall, .includes(forbidenWords)
+
+  currentMessage: {
+    username: 'HackMeDaddy',
+    roomname: '',
+    text: ''
+  },
+
 };
 
 // /^<\w{1,}>$/

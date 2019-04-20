@@ -83,13 +83,13 @@ form input[type=text] {
     padding: 10px;
 }
 
-.friend {
-    color: #fff;
-    background-color: #0090da;
-}
-
 .message {
     background-color: cornflowerblue;
     margin: 5px
+}
+
+.user {
+    font-size: 30px;
+    text-decoration: none;
 }
 
